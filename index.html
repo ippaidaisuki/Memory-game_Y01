@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>神経衰弱ゲーム</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Memory Match</h1>
+            <div class="controls">
+                <button class="level-btn active" data-level="easy">Easy</button>
+                <button class="level-btn" data-level="normal">Normal</button>
+                <button class="level-btn" data-level="hard">Hard</button>
+            </div>
+            <div class="stats">
+                <div class="stat-box">
+                    <span class="stat-label">Moves</span>
+                    <span class="stat-value" id="moves">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Matches</span>
+                    <span class="stat-value" id="matches">0</span>
+                </div>
+                <button id="restart-btn" class="primary-btn">Restart Game</button>
+            </div>
+        </header>
+        <main>
+            <div id="game-board" class="board easy"></div>
+        </main>
+        
+        <div id="victory-modal" class="modal hidden">
+            <div class="modal-content glass">
+                <h2>Congratulations!</h2>
+                <p>You completed the game in <span id="final-moves"></span> moves.</p>
+                <button id="play-again-btn" class="primary-btn">Play Again</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
